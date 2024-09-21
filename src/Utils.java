@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Utils {
 
-    static List<Racers> racerList = new ArrayList<>();
+
 
     public static String askForText(String text) {
         Scanner sc = new Scanner(System.in);
@@ -21,8 +21,16 @@ public class Utils {
     }
 
     public static void printAll() {
-        for (int i = 0; i < Utils.racerList.size(); i++) {
-            System.out.println(Utils.racerList.get(i).getName() + " has " + Utils.racerList.get(i).getMoney());
+        for (int i = 0; i < Registration.racerList.size(); i++) {
+            System.out.println(Registration.racerList.get(i).getName() + " has " + Registration.racerList.get(i).getMoney());
         }
+    }
+
+    public static int menuShowAndPick() {
+        System.out.println("Menu:\n"
+                + "1. Register Racers\n"
+                + "2. Exit\n");
+
+        return askForInt("");
     }
 }

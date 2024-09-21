@@ -10,6 +10,5 @@ public class Registration {
             Racers racer = new Racers(Utils.askForText("Name of User: "), Utils.askForInt("Money the User has: "));
             racerList.add(racer);
         }
-        Utils.printAll();
     }
 }

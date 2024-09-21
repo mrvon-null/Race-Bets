@@ -1,11 +1,12 @@
 public class Main {
+
     static String adminName = "Admin";
     static String adminPass = "12345";
 
     public static void main(String[] args) {
         int menuMode;
 
-        if(Login.adminLogin(adminName,adminPass)){
+        if (Login.adminLogin(adminName, adminPass)) {
             System.out.println("Welcome to the System!");
 
 
@@ -17,6 +18,12 @@ public class Main {
                         Registration.regRacers(Utils.askForInt("Enter the number of racers to register:"));
                         break;
                     case 2:
+                        Utils.printAll();
+                        break;
+                    case 3:
+                        Utils.chooseParticipants();
+                        break;
+                    case 5:
                         System.exit(0);
                 }
             }

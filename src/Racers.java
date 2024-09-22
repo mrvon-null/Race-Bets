@@ -1,6 +1,7 @@
 public class Racers {
     private String name;
     private int money;
+    private int guess;
 
     public Racers() {
     }
@@ -10,8 +11,20 @@ public class Racers {
         this.money = money;
     }
 
+    public void setGuess(int guess) {
+        this.guess = guess;
+    }
+
+    public int getGuess() {
+        return guess;
+    }
+
     public void subtractMoney(int amount) {
         this.money = this.money - amount;
+    }
+
+    public void addMoney(int amount) {
+        this.money = this.money + amount;
     }
 
     public void changeName(String name) {

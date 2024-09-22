@@ -5,6 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
         int menuMode;
+        String[] betters = null;
 
         if (Login.adminLogin(adminName, adminPass)) {
             System.out.println("Welcome to the System!");
@@ -21,7 +22,10 @@ public class Main {
                         Utils.printAll();
                         break;
                     case 3:
-                        Utils.chooseParticipants();
+                        betters = Utils.chooseParticipants();
+                        break;
+                    case 4:
+                        Utils.startRace(betters);
                         break;
                     case 5:
                         System.exit(0);

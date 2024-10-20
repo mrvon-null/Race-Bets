@@ -1,14 +1,16 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Registration {
+    static Map<String, Users> userTable = new HashMap<>();
 
-    static List<Racers> racerList = new ArrayList<>();
-
-    public static void regRacers(int num) {
-        for (int i = 0; i < num; i++) {
-            Racers racer = new Racers(Utils.askForText("Name of User: "), Utils.askForInt("Money the User has: "));
-            racerList.add(racer);
+    public static void regUsers(int num) {
+        int reference = userTable.size();
+        while (userTable.size() - reference < num) {
+            String name = Utils.askForText("Name of the User: ");
+            int money = Utils.askForInt("Money of the User: ");
+            Users user = new Users(name, money);
+            userTable.put(name, user);
         }
     }
 }

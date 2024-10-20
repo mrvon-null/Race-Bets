@@ -5,27 +5,31 @@ public class Main {
 
     public static void main(String[] args) {
         int menuMode;
-        String[] betters = null;
-
+        boolean isReady = false;
         if (Login.adminLogin(adminName, adminPass)) {
             System.out.println("Welcome to the System!");
-
-
             while (true) {
                 menuMode = Utils.menuShowAndPick();
-
                 switch (menuMode) {
                     case 1:
-                        Registration.regRacers(Utils.askForInt("Enter the number of racers to register:"));
+                        Registration.regUsers(Utils.askForInt("Enter the number of racers to register:"));
                         break;
                     case 2:
                         Utils.printAll();
                         break;
                     case 3:
-                        betters = Utils.chooseParticipants();
+                        if (isReady) {
+                            System.out.println("Bets have already been placed. Start the race!");
+                            break;
+                        }
+                        isReady = Utils.pickUsersToBet();
                         break;
                     case 4:
-                        Utils.startRace(betters);
+                        if (!isReady) {
+                            System.out.println("Place the bets first!");
+                            break;
+                        }
+                        isReady = Utils.startRace();
                         break;
                     case 5:
                         System.exit(0);

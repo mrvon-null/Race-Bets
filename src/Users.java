@@ -1,22 +1,10 @@
-public class Racers {
+public class Users {
     private String name;
     private int money;
-    private int guess;
 
-    public Racers() {
-    }
-
-    public Racers(String name, int money) {
+    public Users(String name, int money) {
         this.name = name;
         this.money = money;
-    }
-
-    public void setGuess(int guess) {
-        this.guess = guess;
-    }
-
-    public int getGuess() {
-        return guess;
     }
 
     public void subtractMoney(int amount) {
@@ -29,6 +17,10 @@ public class Racers {
 
     public void changeName(String name) {
         this.name = name;
+    }
+
+    public boolean doIHaveEnoughMoney(int amount) {
+        return this.money >= amount;
     }
 
     public String getName() {
